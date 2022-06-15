@@ -10,12 +10,14 @@ export default function App() {
 const [userProfile, setUserProfile] = useState(codepathUserProfile)
 const [tweets, setTweets] = useState([firstTweet])
 const [tweetText, setTweetText] = useState("")
+const [disabled, setDisabled] = useState(false)
   return (
     <div className="app">
       <Navbar navLinks = {navLinks}/>
       <main>
         <UserProfile userProfile = {userProfile}/>
-        <Feed userProfile = {userProfile} tweets = {tweets} setTweets = {setTweets} tweetText = {tweetText} setTweetText = {setTweetText}/>
+        <Feed userProfile = {userProfile} tweets = {tweets} setTweets = {setTweets} tweetText = {tweetText} setTweetText = {setTweetText}
+        disabled = {disabled} setDisabled = {setDisabled}/>
         <Advertisements />
       </main>
     </div>
