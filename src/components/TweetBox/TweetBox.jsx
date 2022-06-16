@@ -1,5 +1,6 @@
 import * as React from "react"
 import TweetInput from "./TweetInput"
+import { useEffect } from "react"
 import "./TweetBox.css"
 
 
@@ -52,8 +53,16 @@ export function TweetBoxIcons() {
 }
 
 export function TweetCharacterCount(props) {
+  let characters_count = 140 - props.tweetText.length
+
+  useEffect(() => {
+   if (characters_count < 0){document.querySelector(".tweet-length").classList.add("red")}
+   else {
+    document.querySelector(".tweet-length").classList.remove("red")
+   }
+  })
  
-  return <span className="tweet-length" style = {{}}>{props.tweetText.length != 0 && 140 - props.tweetText.length}</span>
+  return <span className="tweet-length">{props.tweetText.length != 0 && characters_count}</span>
 }
 
 export function TweetSubmitButton(props) {
