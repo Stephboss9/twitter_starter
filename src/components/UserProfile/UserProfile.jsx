@@ -1,8 +1,10 @@
 import * as React from "react"
+import elonImage from "./elon.jpg"
 import { formatNumTweets, formatNumFollowers } from "../../utils/format"
 import "./UserProfile.css"
 
 export default function UserProfile({ userProfile }) {
+  // <img src = {elonImage}/>
   return (
     <div className="col user-profile">
       <div className="card">

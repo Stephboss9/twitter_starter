@@ -9,6 +9,8 @@ export default function TweetBox(props) {
   let handleOnTweetTextChange = (event) => {
     props.setTweetText(event.target.value)
   }
+
+
   
   let handleOnSubmit = () => {
   let newTweet = {
@@ -27,7 +29,6 @@ export default function TweetBox(props) {
 
   return (
     <div className="tweet-box">
-      {console.log(props.tweets.length)}
       <TweetInput value = {props.tweetText} handleOnChange = {handleOnTweetTextChange} />
 
       <div className="tweet-box-footer">
