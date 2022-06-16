@@ -5,11 +5,15 @@ export default function TweetInput(props) {
 
   let handleOnFocus = ()=> {
     document.querySelector("textarea").classList.add("expanded")
+    document.querySelector(".fa-image").classList.add("fa-smile")
+
   }
 
   let handleOnBlur = () => {
     if (props.value.length === 0){
       document.querySelector("textarea").classList.remove("expanded")
+      document.querySelector(".fa-image").classList.remove("fa-smile")
+  
     }
   }
 
